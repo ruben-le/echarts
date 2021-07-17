@@ -1,0 +1,4 @@
+GET https://echarts.apache.org/examples/data/asset/data/les-miserables.json
+Accept: application/json
+
+###
