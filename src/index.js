@@ -1,16 +1,16 @@
-// Import the echarts core module, which provides the necessary interfaces for using echarts.
 import * as echarts from 'echarts/core';
-// Import bar charts, all with Chart suffix
+import * as Highcharts from 'highcharts';
+
 import {
     GraphChart
 } from 'echarts/charts';
-// import the tooltip, title, and rectangular coordinate system components, all suffixed with Component
+
 import {
     TitleComponent,
     TooltipComponent,
     GridComponent
 } from 'echarts/components';
-// Import the Canvas renderer, note that introducing the CanvasRenderer or SVGRenderer is a required step
+
 import {
     CanvasRenderer
 } from 'echarts/renderers';
@@ -1796,10 +1796,40 @@ var option = {
     ]
 };
 
-// Register the required components
+// APACHE ECHART
 echarts.use(
     [TitleComponent, TooltipComponent, GridComponent, GraphChart, CanvasRenderer]
 );
-var myChart = echarts.init(document.getElementById('beteiligungsstruktur'));
+var myChart = echarts.init(document.getElementById('beteiligungsstruktur-echarts'));
 // Draw the chart
 myChart.setOption(option);
+
+
+// AB HIER HIGHCHARTS
+document.addEventListener('DOMContentLoaded', function () {
+    Highcharts.chart('beteiligungsstruktur-highcharts', {
+        chart: {
+            type: 'bar'
+        },
+        title: {
+            text: ''
+        },
+        xAxis: {
+            categories: ['Apples', 'Bananas', 'Oranges']
+        },
+        yAxis: {
+            title: {
+                text: 'Fruit eaten'
+            }
+        },
+        series: [{
+            name: 'Jane',
+            data: [1, 0, 4]
+        }, {
+            name: 'John',
+            data: [5, 7, 3]
+        }]
+    });
+});
+
+

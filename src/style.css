@@ -1,4 +1,4 @@
-.ownershipGraph {
+.chart-container {
     alignment: center;
     position: absolute;
     width: 100%;
@@ -6,6 +6,13 @@
     margin: 0;
 }
 
-html {
-    overflow: hidden;
+.ownershipGraph {
+    width: 100%;
+    height: 95%;
+    margin: 0;
+}
+
+h1 {
+    text-align: center;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
 }
